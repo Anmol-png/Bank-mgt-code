@@ -186,8 +186,7 @@ public:
         return enteredPassword == password; // Returns true if passwords match.
     }
 
-    void addTransaction(const 
-    string& transaction) { // Adds a transaction to the transaction history.
+    void addTransaction(const string& transaction) { // Adds a transaction to the transaction history.
         lastTransactionTime += rand() % 60 + 1; // Updates the last transaction time with a random increment.
         char buffer[80]; // Buffer to hold the formatted time string.
         strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", localtime(&lastTransactionTime)); // Formats the time into a readable string.
@@ -431,7 +430,6 @@ public:
             cout << "\n--- Admin Menu ---\n"; // Header for admin menu.
             cout << "1. View All Accounts \n"; // Option to view all accounts.
             cout << "2. Search Account \n"; // Option to search for a specific account.
-            cout << " 
             cout << "3. View Loan History\n"; // Option to view loan history of accounts.
             cout << "4. Logout\n"; // Option to log out of the admin menu.
             cout << "Enter your choice: "; // Prompts for admin choice.
@@ -512,8 +510,7 @@ public:
         while (!(cin >> accountNumber)) { // Validates input for account number.
             cout << "Invalid input. Please enter a number for account number: "; // Prompts for valid input.
             cin.clear(); // Clears the error state.
-            cin.ignore(numeric_limits<streamsize>::max(), '\ 
-            '\n'); // Ignores invalid input.
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignores invalid input.
         }
         if (currentUser ->accountNumber != accountNumber) { // Checks if the entered account number matches the current user's account.
             cout << "Error: You can only deposit into your own account.\n"; // Notifies user of the error.
@@ -726,7 +723,7 @@ public:
             cin >> choice; // Reads the user's choice.
             switch (choice) { // Switch statement to handle user menu options.
                 case 1:
-                    cout << "\n*****VIEW ACCOUNT INFO***** 
+                    cout << "\n*****VIEW ACCOUNT INFO*****\n";
                     cout << currentUser ->getAccountInfo() << endl; // Displays the account information of the current user.
                     break; // Ends case 1.
                 case 2:
